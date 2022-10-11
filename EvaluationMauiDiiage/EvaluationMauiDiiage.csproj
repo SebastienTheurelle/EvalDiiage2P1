@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net6.0-android;</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
@@ -59,6 +58,7 @@
 	  <None Remove="Newtonsoft.Json" />
 	</ItemGroup>
 	<ItemGroup>
+	  <PackageReference Include="Plugin.Firebase" Version="1.2.0" />
 	  <PackageReference Include="Prism.Maui" Version="8.1.273-pre" />
 	  <PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
 	  <PackageReference Include="Sharpnado.TaskMonitor" Version="1.0.2" />
@@ -67,13 +67,12 @@
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta2" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="ViewModels\" />
-	  <Folder Include="Views\" />
-	  <Folder Include="Services\" />
 	  <Folder Include="Commons\" />
-	  <Folder Include="Models\" />
 	</ItemGroup>
 	<ItemGroup>
+	  <MauiXaml Update="Views\DetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\MainPage.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>

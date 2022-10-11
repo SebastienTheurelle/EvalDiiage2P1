@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "51949173060",
+    "project_id": "mauieval",
+    "storage_bucket": "mauieval.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51949173060:android:3963dd1a062be1884e7f11",
+        "android_client_info": {
+          "package_name": "vom.mauiEval"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51949173060-q2951rm9bombkmbm65f0pi5r8p6ihlt3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFRtzyVtGfez3-fAyeCQj3cg5pqvpaCHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51949173060-q2951rm9bombkmbm65f0pi5r8p6ihlt3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
