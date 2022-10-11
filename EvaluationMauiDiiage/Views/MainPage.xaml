@@ -2,8 +2,32 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EvaluationMauiDiiage.Views.MainPage"
+             xmlns:model="clr-namespace:EvaluationMauiDiiage.Models"
+             xmlns:viewmodel="clr-namespace:EvaluationMauiDiiage.ViewModels"
              NavigationPage.HasNavigationBar="False"
-             Title="{Binding Title}">
-    <VerticalStackLayout>
-    </VerticalStackLayout>
+             Title="Liste des rendez-vous">
+    <Grid>
+        <CollectionView ItemsSource="{Binding Meets}"
+                        SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:MeetEntity">
+                    <Grid>
+                        <StackLayout>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"></ColumnDefinition>
+                                    <ColumnDefinition Width="70*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding ScheduledDate}" />
+                            </Grid>
+                        </StackLayout>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>

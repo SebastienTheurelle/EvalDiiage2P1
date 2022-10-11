@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace EvaluationMauiDiiage.Services
+﻿namespace EvaluationMauiDiiage.Services
 {
     public class ServiceSource
     {
