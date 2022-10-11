@@ -12,13 +12,13 @@ using Plugin.Firebase.CloudMessaging;
 
 namespace EvaluationMauiDiiage.ViewModels;
 
-public class MainViewModel : BaseViewModel
+public class ResourcesViewModel : BaseViewModel
 {
     private readonly IResourceService _resourceService;
 
     #region CTOR
 
-    public MainViewModel(INavigationService navigationService, IResourceService resourceService) : base(navigationService)
+    public ResourcesViewModel(INavigationService navigationService, IResourceService resourceService) : base(navigationService)
     {
         _resourceService = resourceService;
 
@@ -39,12 +39,21 @@ public class MainViewModel : BaseViewModel
     {
         await base.OnNavigatedToAsync(parameters);
 
-        var resources = await _resourceService.GetResourcesAsync();
-        _resourcesCache.AddOrUpdate(resources.Select(x => new ResourceEntity(x)));
-
-        await CrossFirebaseCloudMessaging.Current.CheckIfValidAsync();
-        var token = await CrossFirebaseCloudMessaging.Current.GetTokenAsync();
-        await Application.Current.MainPage.DisplayAlert("FCM token", token, "OK");
+        if (parameters.GetNavigationMode() == Prism.Navigation.NavigationMode.New)
+        {
+            var resources = await _resourceService.GetResourcesAsync();
+            _resourcesCache.AddOrUpdate(resources.Select(x => new ResourceEntity(x)));
+        }
+        try
+        {
+            await CrossFirebaseCloudMessaging.Current.CheckIfValidAsync();
+            var token = await CrossFirebaseCloudMessaging.Current.GetTokenAsync();
+            await Application.Current.MainPage.DisplayAlert("FCM token", token, "OK");
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine(ex?.Message);
+        }
     }
 
     #endregion

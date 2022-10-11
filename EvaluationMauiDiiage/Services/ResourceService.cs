@@ -22,11 +22,9 @@ public class ResourceService : IResourceService
     {
         try
         {
-            using var stream = await FileSystem.OpenAppPackageFileAsync("source.json");
-            using var reader = new StreamReader(stream);
-
-            var content = await reader.ReadToEndAsync();
-            var dtos = JsonConvert.DeserializeObject<IEnumerable<ResourceDTODown>>(content);
+            var httpClient = new ServiceSource();
+            var response = await httpClient.GetSourceFileContent();
+            var dtos = JsonConvert.DeserializeObject<IEnumerable<ResourceDTODown>>(response);
 
             return dtos;
         }

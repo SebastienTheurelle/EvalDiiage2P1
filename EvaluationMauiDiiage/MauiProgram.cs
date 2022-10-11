@@ -27,7 +27,7 @@ public static class MauiProgram
 
         }).OnAppStart(navigation =>
         {
-            navigation.NavigateAsync($"{Constants.NavigationPageNavigationKey}/{Constants.MainPageNavigationKey}");
+            navigation.NavigateAsync($"{Constants.NavigationPageNavigationKey}/{Constants.ResourcesPageNavigationKey}");
 
         })).ConfigureFonts(fonts =>
         {
@@ -39,7 +39,7 @@ public static class MauiProgram
 
     private static void RegisterForNavigation(this IContainerRegistry containerRegistry)
     {
-        containerRegistry.RegisterForNavigation<MainPage, MainViewModel>(Constants.MainPageNavigationKey);
+        containerRegistry.RegisterForNavigation<ResourcesPage, ResourcesViewModel>(Constants.ResourcesPageNavigationKey);
         containerRegistry.RegisterForNavigation<ResourcePage, ResourceViewModel>(Constants.ResourcePageNavigationKey);
     }
 

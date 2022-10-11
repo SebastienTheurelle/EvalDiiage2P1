@@ -31,7 +31,6 @@ public class ResourceViewModel : BaseViewModel
     {
         await base.OnNavigatedToAsync(parameters);
 
-        _notificationService.SendNotification("Hello", "Hello");
 
         if (parameters.TryGetValue<long>(Constants.ResourceIdNavigationParameterKey, out long resourceId))
         {
