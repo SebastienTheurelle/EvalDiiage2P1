@@ -6,7 +6,10 @@ namespace EvaluationMauiDiiage.Commons
     public class Constants
     {
         public const string NavigationPageNavigationKey = nameof(NavigationPage);
-        public const string MainPageNavigationKey = nameof(MainPage);
+
+        #region Pages
+        public const string RendezVousListPage = nameof(RendezVousListPage);
+        #endregion
+
     }
 }
-

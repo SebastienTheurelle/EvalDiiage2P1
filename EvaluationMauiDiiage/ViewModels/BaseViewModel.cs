@@ -75,7 +75,7 @@ namespace EvaluationMauiDiiage.ViewModels
             return Task.FromResult(0);
         }
 
-        public void OnNavigatedTo(INavigationParameters parameters)
+        public virtual void OnNavigatedTo(INavigationParameters parameters)
         {
             TaskMonitor.Create(OnNavigatedToAsync(parameters),
                           whenFaulted: t => {

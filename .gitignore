@@ -1,3 +1,6 @@
 .vs
 EvaluationMauiDiiage/bin
 EvaluationMauiDiiage/obj
+.DS_Store
+bin
+obj

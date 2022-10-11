@@ -57,6 +57,8 @@
 	  <None Remove="CommunityToolkit.Maui" />
 	  <None Remove="Models\" />
 	  <None Remove="Newtonsoft.Json" />
+	  <None Remove="Services\Interfaces\" />
+	  <None Remove="Models\Entities\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <PackageReference Include="Prism.Maui" Version="8.1.273-pre" />
@@ -72,9 +74,11 @@
 	  <Folder Include="Services\" />
 	  <Folder Include="Commons\" />
 	  <Folder Include="Models\" />
+	  <Folder Include="Services\Interfaces\" />
+	  <Folder Include="Models\Entities\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <MauiXaml Update="Views\MainPage.xaml">
+	  <MauiXaml Update="Views\RendezVousList.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
 	</ItemGroup>
