@@ -57,6 +57,11 @@
 	  <None Remove="CommunityToolkit.Maui" />
 	  <None Remove="Models\" />
 	  <None Remove="Newtonsoft.Json" />
+	  <None Remove="Services\Interfaces\" />
+	  <None Remove="Models\Entities\" />
+	  <None Remove="Models\Interfaces\" />
+	  <None Remove="Models\Wrappers\" />
+	  <None Remove="Platforms\Android\Services\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <PackageReference Include="Prism.Maui" Version="8.1.273-pre" />
@@ -72,9 +77,17 @@
 	  <Folder Include="Services\" />
 	  <Folder Include="Commons\" />
 	  <Folder Include="Models\" />
+	  <Folder Include="Services\Interfaces\" />
+	  <Folder Include="Models\Entities\" />
+	  <Folder Include="Models\Interfaces\" />
+	  <Folder Include="Models\Wrappers\" />
+	  <Folder Include="Platforms\Android\Services\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Update="Views\MainPage.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ResourcePage.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
 	</ItemGroup>

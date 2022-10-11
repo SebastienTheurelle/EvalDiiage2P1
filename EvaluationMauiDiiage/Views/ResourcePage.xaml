@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModels="clr-namespace:EvaluationMauiDiiage.ViewModels"
+             x:DataType="ViewModels:ResourceViewModel"
+             x:Class="EvaluationMauiDiiage.Views.ResourcePage"
+             Title="{Binding Resource.Name}"
+             BackgroundColor="{AppThemeBinding Light={StaticResource Light}, Dark={StaticResource Dark}}">
+    <VerticalStackLayout>
+        <Label 
+            Text="{Binding Resource.Id}"/>
+        <Label 
+            Text="{Binding Resource.Name}"/>
+        <Label 
+            Text="{Binding Resource.Note}"/>
+        <Label 
+            Text="{Binding Resource.ScheduledDate}"/>
+
+
+        <StackLayout>
+            <Entry Text="{Binding NotificationTitle}" Placeholder="Notification title"/>
+            <Entry Text="{Binding NotificationContent}" Placeholder="Notification content"/>
+            <Entry Text="{Binding NotificationDate}" Placeholder="Notification date"/>
+            <Button Text="Créer la notification" Command="{Binding CreateNotificationCommand}"/>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
