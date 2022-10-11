@@ -3,7 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EvaluationMauiDiiage.Views.MainPage"
              NavigationPage.HasNavigationBar="False"
-             Title="{Binding Title}">
+             xmlns:ViewModels="clr-namespace:EvaluationMauiDiiage.ViewModels"
+             Title="{Binding Title}"
+             BackgroundColor="{AppThemeBinding Light = {StaticResource Yellow300Accent}, Dark={StaticResource Yellow100Accent}}">
     <VerticalStackLayout>
+        <Button Text="Local notification settings" Command="{Binding NavigateToLocalNotificationSettings }" />
+        <Button Text="Bookings" Command="{Binding NavigateToBookings }" />
+        <Button Text="Send Firebase notification" Command="{Binding SendFireBaseNotification }" />
     </VerticalStackLayout>
 </ContentPage>

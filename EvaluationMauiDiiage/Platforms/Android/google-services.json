@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "280795891327",
+    "project_id": "evalmaui-79c38",
+    "storage_bucket": "evalmaui-79c38.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280795891327:android:5694c0425da7100bbaa14a",
+        "android_client_info": {
+          "package_name": "com.companyname.evaluationmauidiiage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "280795891327-74ot9u7tkt26gnl8pqh1ni8da71gf0ig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5amuY2R6rtN0mgE8PtSvo5Gl3qR_o00s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "280795891327-74ot9u7tkt26gnl8pqh1ni8da71gf0ig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

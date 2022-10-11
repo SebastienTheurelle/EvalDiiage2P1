@@ -1,8 +1,7 @@
-﻿using EvaluationMauiDiiage.Commons;
+﻿using CommunityToolkit.Maui;
+using EvaluationMauiDiiage.Commons;
 using EvaluationMauiDiiage.ViewModels;
 using EvaluationMauiDiiage.Views;
-using CommunityToolkit.Maui;
-using EvaluationMauiDiiage.Services;
 
 namespace EvaluationMauiDiiage;
 public static class MauiProgram
@@ -29,6 +28,8 @@ public static class MauiProgram
     private static void RegisterForNavigation(this IContainerRegistry containerRegistry)
     {
         containerRegistry.RegisterForNavigation<MainPage, MainViewModel>(Constants.MainPageNavigationKey);
+        containerRegistry.RegisterForNavigation<BookingsPage, BookingsViewModel>(Constants.BookingsPageNavigationKey);
+        containerRegistry.RegisterForNavigation<LocalNotificationSettingsPage, LocalNotificationSettingsViewModel>(Constants.LocalNotificationSettingsPageNavigationKey);
     }
 
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using EvaluationMauiDiiage.Views;
+﻿using EvaluationMauiDiiage.Views;
 
 namespace EvaluationMauiDiiage.Commons
 {
@@ -7,6 +6,8 @@ namespace EvaluationMauiDiiage.Commons
     {
         public const string NavigationPageNavigationKey = nameof(NavigationPage);
         public const string MainPageNavigationKey = nameof(MainPage);
+        public const string BookingsPageNavigationKey = nameof(BookingsPage);
+        public const string LocalNotificationSettingsPageNavigationKey = nameof(LocalNotificationSettingsPage);
     }
 }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Metadata;
 using ReactiveUI;
 using Sharpnado.Tasks;
 
@@ -11,6 +12,7 @@ namespace EvaluationMauiDiiage.ViewModels
         public BaseViewModel(INavigationService navigationService)
         {
             NavigationService = navigationService;
+            
         }
 
         #endregion
