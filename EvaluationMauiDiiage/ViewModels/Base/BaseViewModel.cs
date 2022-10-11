@@ -1,65 +1,51 @@
 ﻿using System;
+using System.ComponentModel;
 using ReactiveUI;
 using Sharpnado.Tasks;
 
-namespace EvaluationMauiDiiage.ViewModels
+namespace EvaluationMauiDiiage.ViewModels.Base
 {
-    public abstract class BaseViewModel : ReactiveObject, INavigatedAware, IInitializeAsync, IPageLifecycleAware
+    public abstract class BaseViewModel : BindableBase, INavigationAware, IPageLifecycleAware, INotifyPropertyChanged
     {
-        #region CTOR
-
-        public BaseViewModel(INavigationService navigationService)
-        {
-            NavigationService = navigationService;
-        }
-
+        #region Attributes Privates and Protected
+        protected INavigationService NavigationService;
+        private bool _isLoading;
+        private string _loadingMessage;
+        private string _title;
         #endregion
 
-        #region Properties
 
-        protected INavigationService NavigationService;
-
-        #region IsLoading
-
-        private bool _isLoading;
-
+        #region Properties 
         public bool IsLoading
         {
             get => _isLoading;
-            set => this.RaiseAndSetIfChanged(ref _isLoading, value);
+            set => SetProperty(ref _isLoading, value);
         }
-
-        #endregion
-
-        #region LoadingMessage
-
-        private string _loadingMessage;
 
         public string LoadingMessage
         {
             get => _loadingMessage;
-            set => this.RaiseAndSetIfChanged(ref _loadingMessage, value);
+            set => SetProperty(ref _loadingMessage, value);
         }
-
-        #endregion
-
-        #region Title
-
-        private string _title;
 
         public string Title
         {
             get => _title;
-            set => this.RaiseAndSetIfChanged(ref _title, value);
+            set => SetProperty(ref _title, value);
         }
-
         #endregion
 
+        #region CTOR
+        public BaseViewModel(INavigationService navigationService)
+        {
+            NavigationService = navigationService;
+            Title = "My Maui App";
+        }
         #endregion
-
+       
         #region INavigatedAware Implementation
 
-        public void OnNavigatedFrom(INavigationParameters parameters)
+        public virtual void OnNavigatedFrom(INavigationParameters parameters)
         {
             TaskMonitor.Create(OnNavigatedFromAsync(parameters),
                           whenFaulted: t => {
@@ -75,7 +61,7 @@ namespace EvaluationMauiDiiage.ViewModels
             return Task.FromResult(0);
         }
 
-        public void OnNavigatedTo(INavigationParameters parameters)
+        public virtual void OnNavigatedTo(INavigationParameters parameters)
         {
             TaskMonitor.Create(OnNavigatedToAsync(parameters),
                           whenFaulted: t => {
@@ -104,7 +90,7 @@ namespace EvaluationMauiDiiage.ViewModels
 
         #region IPageLifecycleAware Implementation
 
-        public void OnAppearing()
+        public virtual void OnAppearing()
         {
             TaskMonitor.Create(OnAppearingAsync(),
                           whenFaulted: t => {
@@ -120,7 +106,7 @@ namespace EvaluationMauiDiiage.ViewModels
             return Task.FromResult(0);
         }
 
-        public void OnDisappearing()
+        public virtual void OnDisappearing()
         {
             TaskMonitor.Create(OnDisappearingAsync(),
                           whenFaulted: t => {

@@ -2,8 +2,35 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EvaluationMauiDiiage.Views.MainPage"
-             NavigationPage.HasNavigationBar="False"
+             xmlns:ViewModels="clr-namespace:EvaluationMauiDiiage.ViewModels"
+             NavigationPage.HasNavigationBar="True"
              Title="{Binding Title}">
-    <VerticalStackLayout>
-    </VerticalStackLayout>
+
+    <ScrollView>
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+
+            <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" Color="Purple" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+            <Label Text="My Appointments"/>
+            <CollectionView ItemsSource="{Binding Appointments}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                        Span="2"
+                        VerticalItemSpacing="10"
+                        HorizontalItemSpacing="30" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="LightGray" CornerRadius="30" HasShadow="False" HeightRequest="30" Padding="30,5,0,0" >
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type ViewModels:MainPageViewModel}}, Path=OnOptionsSelectionChangedCommand}" CommandParameter="{Binding .}"/>
+                            </Frame.GestureRecognizers>
+                            <Label Text="{Binding Label}" TextColor="Black" VerticalTextAlignment="Start" VerticalOptions="Start"/>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

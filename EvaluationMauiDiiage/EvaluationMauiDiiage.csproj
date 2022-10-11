@@ -57,6 +57,16 @@
 	  <None Remove="CommunityToolkit.Maui" />
 	  <None Remove="Models\" />
 	  <None Remove="Newtonsoft.Json" />
+	  <None Remove="Models\Dtos\" />
+	  <None Remove="Models\Wrapper\" />
+	  <None Remove="Models\Entities\" />
+	  <None Remove="Models\Dtos\Down\" />
+	  <None Remove="Models\Entities\Interfaces\" />
+	  <None Remove="Views\Components\" />
+	  <None Remove="Helper\" />
+	  <None Remove="Helper\Interfaces\" />
+	  <None Remove="Services\Interfaces\" />
+	  <None Remove="ViewModels\Base\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <PackageReference Include="Prism.Maui" Version="8.1.273-pre" />
@@ -72,9 +82,22 @@
 	  <Folder Include="Services\" />
 	  <Folder Include="Commons\" />
 	  <Folder Include="Models\" />
+	  <Folder Include="Models\Dtos\" />
+	  <Folder Include="Models\Wrapper\" />
+	  <Folder Include="Models\Entities\" />
+	  <Folder Include="Models\Dtos\Down\" />
+	  <Folder Include="Models\Entities\Interfaces\" />
+	  <Folder Include="Views\Components\" />
+	  <Folder Include="Helper\" />
+	  <Folder Include="Helper\Interfaces\" />
+	  <Folder Include="Services\Interfaces\" />
+	  <Folder Include="ViewModels\Base\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Update="Views\MainPage.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\DetailsPage.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
 	</ItemGroup>

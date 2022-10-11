@@ -1,8 +1,9 @@
 ﻿using System;
+using EvaluationMauiDiiage.Services.Interfaces;
 
 namespace EvaluationMauiDiiage.Services
 {
-    public class ServiceSource
+    public class ServiceSource : IServiceSource
     {
         public async Task<string> GetSourceFileContent()
         {
