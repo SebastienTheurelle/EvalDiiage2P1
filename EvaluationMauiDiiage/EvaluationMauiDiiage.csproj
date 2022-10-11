@@ -67,15 +67,17 @@
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta2" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="ViewModels\" />
-	  <Folder Include="Views\" />
-	  <Folder Include="Services\" />
 	  <Folder Include="Commons\" />
-	  <Folder Include="Models\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Update="Views\MainPage.xaml">
 	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\NotifPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\RDVPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
 </Project>
