@@ -1,24 +1,35 @@
-﻿using System;
+﻿using EvaluationMauiDiiage.Models;
+using EvaluationMauiDiiage.Services.Interfaces;
+using System;
+using System.Text.Json;
 
 namespace EvaluationMauiDiiage.Services
 {
-    public class ServiceSource
+    public class ServiceSource : IServiceSource
     {
-        public async Task<string> GetSourceFileContent()
+        List<RDVEntity> rdvList = new();
+
+        public async Task<List<RDVEntity>> GetSourceFileContent()
         {
             try
             {
                 using var stream = await FileSystem.OpenAppPackageFileAsync("source.json");
                 using var reader = new StreamReader(stream);
-
                 var content = await reader.ReadToEndAsync();
+                rdvList = JsonSerializer.Deserialize<List<RDVEntity>>(content);
 
-                return content;
+
+                return rdvList;
             }
             catch (Exception ex)
             {
-                return "";
+                return new List<RDVEntity>();
             }
+        }
+        HttpClient httpClient;
+        public ServiceSource()
+        {
+            this.httpClient = new HttpClient();
         }
     }
 }

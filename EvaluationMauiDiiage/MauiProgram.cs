@@ -3,6 +3,7 @@ using EvaluationMauiDiiage.ViewModels;
 using EvaluationMauiDiiage.Views;
 using CommunityToolkit.Maui;
 using EvaluationMauiDiiage.Services;
+using EvaluationMauiDiiage.Services.Interfaces;
 
 namespace EvaluationMauiDiiage;
 public static class MauiProgram
@@ -29,6 +30,11 @@ public static class MauiProgram
     private static void RegisterForNavigation(this IContainerRegistry containerRegistry)
     {
         containerRegistry.RegisterForNavigation<MainPage, MainViewModel>(Constants.MainPageNavigationKey);
+        containerRegistry.RegisterForNavigation<NotifPage, NotifViewModel>(Constants.NotifPageNavigationKey);
+        containerRegistry.RegisterForNavigation<RDVPage, RDVViewModel>(Constants.RDVPageNavigationKey);
+
+        containerRegistry.RegisterSingleton<IServiceSource, ServiceSource>();
+
     }
 
 }

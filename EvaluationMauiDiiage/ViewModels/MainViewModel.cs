@@ -1,4 +1,5 @@
 ﻿using System;
+using EvaluationMauiDiiage.Commons;
 using EvaluationMauiDiiage.Services;
 using Newtonsoft.Json;
 
@@ -10,6 +11,7 @@ namespace EvaluationMauiDiiage.ViewModels
 
         public MainViewModel(INavigationService navigationService) : base(navigationService)
         {
+            GoToRDVPageCommand = new DelegateCommand(async () => await DoRDVPageCommand());
         }
 
         #endregion
@@ -20,11 +22,17 @@ namespace EvaluationMauiDiiage.ViewModels
         #endregion
 
         #region Properties
+        public DelegateCommand GoToRDVPageCommand { get; }
 
         #endregion
 
         #region Commands
+        public async Task DoRDVPageCommand()
+        {
+            await NavigationService.NavigateAsync(Constants.RDVPageNavigationKey);
+        }
 
+        
         #endregion
     }
 }

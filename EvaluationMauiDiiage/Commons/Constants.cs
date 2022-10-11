@@ -7,6 +7,8 @@ namespace EvaluationMauiDiiage.Commons
     {
         public const string NavigationPageNavigationKey = nameof(NavigationPage);
         public const string MainPageNavigationKey = nameof(MainPage);
+        public const string NotifPageNavigationKey = nameof(NotifPage);
+        public const string RDVPageNavigationKey = nameof(RDVPage);
     }
 }
 

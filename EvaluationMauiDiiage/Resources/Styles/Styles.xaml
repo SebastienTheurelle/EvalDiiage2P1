@@ -381,5 +381,25 @@
         <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
     </Style>
 
+    <Style TargetType="Grid" x:Key="RDVsListing">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"></Setter>
+    </Style>
+
+    <Style TargetType="Label" x:Key="LabelListing">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"></Setter>
+        <Setter Property="FontAttributes" Value="Bold"></Setter>
+        <Setter Property="FontSize" Value="Large"></Setter>
+    </Style>
+
+    <Style TargetType="Button" x:Key="ButtonMainPage">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"></Setter>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"></Setter>
+        <Setter Property="FontAttributes" Value="Bold"></Setter>
+        <Setter Property="FontSize" Value="Large"></Setter>
+        <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"></Setter>
+        <Setter Property="BorderWidth" Value="2"></Setter>
+        <Setter Property="Margin" Value="20,20,20,20"></Setter>
+    </Style>
+
 </ResourceDictionary>
 
