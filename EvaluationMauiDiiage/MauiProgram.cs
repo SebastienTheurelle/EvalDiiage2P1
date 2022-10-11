@@ -3,6 +3,7 @@ using EvaluationMauiDiiage.ViewModels;
 using EvaluationMauiDiiage.Views;
 using CommunityToolkit.Maui;
 using EvaluationMauiDiiage.Services;
+using EvaluationMauiDiiage.Services.Interfaces;
 
 namespace EvaluationMauiDiiage;
 public static class MauiProgram
@@ -12,11 +13,12 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder.UseMauiApp<App>().UsePrism(prismAppBuilder => prismAppBuilder.RegisterTypes(containerRegistry =>
         {
-            containerRegistry.RegisterForNavigation();
+            RegisterViews(containerRegistry);
+            RegisterServices(containerRegistry);
 
         }).OnAppStart(navigation =>
         {
-            navigation.NavigateAsync($"{Constants.NavigationPageNavigationKey}/{Constants.MainPageNavigationKey}");
+            navigation.NavigateAsync($"{Constants.NavigationPageNavigationKey}/{Constants.NotificationsPage}");
 
         })).ConfigureFonts(fonts =>
         {
@@ -26,9 +28,15 @@ public static class MauiProgram
         return builder.Build();
     }
 
-    private static void RegisterForNavigation(this IContainerRegistry containerRegistry)
+    private static void RegisterServices(IContainerRegistry containerRegistry)
     {
-        containerRegistry.RegisterForNavigation<MainPage, MainViewModel>(Constants.MainPageNavigationKey);
+        containerRegistry.RegisterSingleton<IMeetingsService, MeetingsService>();
+        containerRegistry.RegisterSingleton<INotificationsService, NotificationsService>();
     }
 
+    private static void RegisterViews(this IContainerRegistry containerRegistry)
+    {
+        containerRegistry.RegisterForNavigation<MeetingsPage, MeetingsViewModel>(Constants.MeetingsPage);
+        containerRegistry.RegisterForNavigation<NotificationsPage, NotificationsViewModel>(Constants.NotificationsPage);
+    }
 }

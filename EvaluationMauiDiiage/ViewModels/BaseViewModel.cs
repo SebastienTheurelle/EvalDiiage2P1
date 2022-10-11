@@ -21,7 +21,7 @@ namespace EvaluationMauiDiiage.ViewModels
 
         #region IsLoading
 
-        private bool _isLoading;
+        private bool _isLoading; 
 
         public bool IsLoading
         {

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModels="clr-namespace:EvaluationMauiDiiage.ViewModels"
+             x:Class="EvaluationMauiDiiage.Views.MeetingsPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}"
+             Title="{Binding Title}">
+
+    <StackLayout>
+        <CollectionView ItemsSource="{Binding Meetings}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Style="{StaticResource MeetingsFrame}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <Label Text="{Binding Name}" Style="{StaticResource MeetingsText}"/>
+                            <Label Text="{Binding ScheduledDate}" Style="{StaticResource MeetingsText}"/>
+                        </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type ViewModels:MeetingsViewModel}}, Path=MeetingsCommand}" CommandParameter="{Binding .}"/>
+                            </Frame.GestureRecognizers>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
+

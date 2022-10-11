@@ -57,6 +57,16 @@
 	  <None Remove="CommunityToolkit.Maui" />
 	  <None Remove="Models\" />
 	  <None Remove="Newtonsoft.Json" />
+	  <None Remove="Services\Interfaces\" />
+	  <None Remove="Models\Entities\" />
+	  <None Remove="Models\DTO\" />
+	  <None Remove="Models\DTO\Down\" />
+	  <None Remove="Models\Wrappers\" />
+	  <None Remove="Helpers\" />
+	  <None Remove="Models\Firebase\" />
+	  <None Remove="Platforms\Android\Services\" />
+	  <None Remove="Platforms\Android\Helpers\" />
+	  <None Remove="Helpers\Interfaces\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <PackageReference Include="Prism.Maui" Version="8.1.273-pre" />
@@ -72,10 +82,26 @@
 	  <Folder Include="Services\" />
 	  <Folder Include="Commons\" />
 	  <Folder Include="Models\" />
+	  <Folder Include="Services\Interfaces\" />
+	  <Folder Include="Models\Entities\" />
+	  <Folder Include="Models\DTO\" />
+	  <Folder Include="Models\DTO\Down\" />
+	  <Folder Include="Models\Wrappers\" />
+	  <Folder Include="Helpers\" />
+	  <Folder Include="Models\Firebase\" />
+	  <Folder Include="Platforms\Android\Services\" />
+	  <Folder Include="Platforms\Android\Helpers\" />
+	  <Folder Include="Helpers\Interfaces\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Update="Views\MainPage.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\NotificationsPage.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
+	  <PackageReference Include="Xamarin.Firebase.Messaging" Version="123.0.8" />
 	</ItemGroup>
 </Project>

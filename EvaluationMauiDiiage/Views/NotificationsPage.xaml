@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EvaluationMauiDiiage.Views.NotificationsPage"
+             BackgroundColor="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}"
+             Title="NotificationsPage">
+    <StackLayout>
+        <Label Text="Programmez votre notification"></Label>
+        <TimePicker></TimePicker>
+        <Button Text="VALIDER" Command="{Binding ValidateNotifCommand}"/>
+    </StackLayout>
+</ContentPage>

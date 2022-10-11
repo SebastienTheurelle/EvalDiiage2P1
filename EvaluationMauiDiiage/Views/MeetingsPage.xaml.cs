@@ -2,14 +2,10 @@
 
 namespace EvaluationMauiDiiage.Views;
 
-public partial class MainPage : ContentPage
+public partial class MeetingsPage : ContentPage
 {
-	public MainPage()
+	public MeetingsPage()
 	{
 		InitializeComponent();
 	}
-
-
-
-
 }
