@@ -8,6 +8,7 @@ using EvaluationMauiDiiage.Services.Interfaces;
 using Newtonsoft.Json;
 using ReactiveUI;
 using EvaluationMauiDiiage.Commons;
+using Plugin.Firebase.CloudMessaging;
 
 namespace EvaluationMauiDiiage.ViewModels;
 
@@ -40,6 +41,10 @@ public class MainViewModel : BaseViewModel
 
         var resources = await _resourceService.GetResourcesAsync();
         _resourcesCache.AddOrUpdate(resources.Select(x => new ResourceEntity(x)));
+
+        await CrossFirebaseCloudMessaging.Current.CheckIfValidAsync();
+        var token = await CrossFirebaseCloudMessaging.Current.GetTokenAsync();
+        await Application.Current.MainPage.DisplayAlert("FCM token", token, "OK");
     }
 
     #endregion

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "876903520681",
+    "project_id": "eval-b0559",
+    "storage_bucket": "eval-b0559.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876903520681:android:8db72e5e9ba38dc7fa8cb8",
+        "android_client_info": {
+          "package_name": "com.companyname.evaluationmauidiiage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876903520681-8c89rtrig70m4unjqei77husct5m1g9i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdOH7jAPjWCAS8gXUJPev80VYK3rXsrII"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876903520681-8c89rtrig70m4unjqei77husct5m1g9i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
