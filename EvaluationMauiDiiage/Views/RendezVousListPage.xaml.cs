@@ -1,8 +1,8 @@
 ﻿namespace EvaluationMauiDiiage.Views;
 
-public partial class RendezVousList : ContentPage
+public partial class RendezVousListPage : ContentPage
 {
-	public RendezVousList()
+	public RendezVousListPage()
 	{
 		InitializeComponent();
 	}

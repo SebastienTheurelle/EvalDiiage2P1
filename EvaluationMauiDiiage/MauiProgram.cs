@@ -34,7 +34,8 @@ public static class MauiProgram
 
     private static void RegisterForNavigation(this IContainerRegistry containerRegistry)
     {
-        containerRegistry.RegisterForNavigation<RendezVousList, RendezVousViewModel>(Constants.RendezVousListPage);
+        containerRegistry.RegisterForNavigation<RendezVousListPage, RendezVousListPageViewModel>(Constants.RendezVousListPage);
+        containerRegistry.RegisterForNavigation<RendezVousDetailPage, RendezVousDetailPageViewModel>(Constants.RendezVousDetailPage);
     }
 
 }

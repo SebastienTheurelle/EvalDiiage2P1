@@ -9,6 +9,7 @@ namespace EvaluationMauiDiiage.Commons
 
         #region Pages
         public const string RendezVousListPage = nameof(RendezVousListPage);
+        public const string RendezVousDetailPage = nameof(RendezVousDetailPage);
         #endregion
 
     }

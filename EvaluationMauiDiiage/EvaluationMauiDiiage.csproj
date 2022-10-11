@@ -78,7 +78,10 @@
 	  <Folder Include="Models\Entities\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <MauiXaml Update="Views\RendezVousList.xaml">
+	  <MauiXaml Update="Views\RendezVousListPage.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\RendezVousDetailPage.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
 	</ItemGroup>

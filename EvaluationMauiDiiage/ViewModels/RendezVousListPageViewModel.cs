@@ -5,10 +5,11 @@ using EvaluationMauiDiiage.Services.Interfaces;
 using Newtonsoft.Json;
 using ReactiveUI;
 using System.Linq;
+using EvaluationMauiDiiage.Commons;
 
 namespace EvaluationMauiDiiage.ViewModels
 {
-    public class RendezVousViewModel : BaseViewModel
+    public class RendezVousListPageViewModel : BaseViewModel
     {
 
         #region Properties
@@ -24,9 +25,10 @@ namespace EvaluationMauiDiiage.ViewModels
         #endregion
 
         #region Ctor
-        public RendezVousViewModel(INavigationService navigationService, IServiceSource serviceSource) : base(navigationService)
+        public RendezVousListPageViewModel(INavigationService navigationService, IServiceSource serviceSource) : base(navigationService)
         {
             _serviceSource = serviceSource;
+            RendezVousTappedCommand = new DelegateCommand<RendezVousEntity>(async x => await OnRendezVousTappedCommand(x));
         }
         #endregion
 
@@ -37,6 +39,14 @@ namespace EvaluationMauiDiiage.ViewModels
             var jsonContent = await _serviceSource.GetSourceFileContent();
             var rendezVous = JsonConvert.DeserializeObject<List<RendezVousEntity>>(jsonContent);
             RendezVous = rendezVous.OrderBy(rdv => rdv.ScheduledDate.Date).ToList();
+        }
+        #endregion
+
+        #region Methods / Commands
+        public DelegateCommand<RendezVousEntity> RendezVousTappedCommand { get; }
+        private async Task OnRendezVousTappedCommand(RendezVousEntity resource)
+        {
+            await NavigationService.NavigateAsync(Constants.RendezVousDetailPage);
         }
         #endregion
 
