@@ -1,8 +1,10 @@
-﻿using System;
+﻿using EvaluationMauiDiiage.Models.Dtos.Down;
+using EvaluationMauiDiiage.Services.Interfaces;
+using Newtonsoft.Json;
 
 namespace EvaluationMauiDiiage.Services
 {
-    public class ServiceSource
+    public class ServiceSource : IServiceSource
     {
         public async Task<string> GetSourceFileContent()
         {
@@ -19,6 +21,15 @@ namespace EvaluationMauiDiiage.Services
             {
                 return "";
             }
+        }
+
+        public async Task<List<RendezVousDtoDown>> GetRendezVousAsync()
+        {
+            var source = await this.GetSourceFileContent();
+
+            var data = JsonConvert.DeserializeObject<List<RendezVousDtoDown>>(source).OrderBy(rdv => rdv.ScheduledDate).ToList();
+
+            return data;
         }
     }
 }

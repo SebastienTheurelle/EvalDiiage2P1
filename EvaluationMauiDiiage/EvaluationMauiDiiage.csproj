@@ -67,15 +67,23 @@
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta2" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="ViewModels\" />
-	  <Folder Include="Views\" />
-	  <Folder Include="Services\" />
 	  <Folder Include="Commons\" />
-	  <Folder Include="Models\" />
+	  <Folder Include="Models\Dtos\Up\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="Views\RendezVousListPage.xaml.cs">
+	    <DependentUpon>RendezVousListPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Update="Views\MainPage.xaml">
 	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\RendezVousListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\RendezVousNotificationPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
 </Project>

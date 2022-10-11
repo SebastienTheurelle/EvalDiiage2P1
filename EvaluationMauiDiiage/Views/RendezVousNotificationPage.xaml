@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EvaluationMauiDiiage.Views.RendezVousNotificationPage"
+             Title="RendezVousNotificationPage">
+    <VerticalStackLayout>
+        <!--<Entry Placeholder="Title" Text="{Binding TitleNotification}"/>
+        <Entry Placeholder="Message" Text="{Binding MessageNotification}"/>
+        <DatePicker Date="{Binding DateNotification}"/>
+        <TimePicker Time="{Binding HeureNotification}"/>-->
+        <Button Text="Send" Command="{Binding RendezVousNotificationCommand}"/>
+    </VerticalStackLayout>
+</ContentPage>

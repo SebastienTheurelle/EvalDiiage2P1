@@ -7,6 +7,9 @@ namespace EvaluationMauiDiiage.Commons
     {
         public const string NavigationPageNavigationKey = nameof(NavigationPage);
         public const string MainPageNavigationKey = nameof(MainPage);
+        public const string RendezVousListPageNavigationKey = nameof(RendezVousListPage);
+        public const string RendezVousNotificationPageListPageNavigationKey = nameof(RendezVousNotificationPage);
+        public const string RendezVousIdNavigationParameter = "rendezVousParameter";
     }
 }
 
