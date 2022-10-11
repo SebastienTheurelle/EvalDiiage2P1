@@ -4,7 +4,11 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-
+    <Style x:Key="Background" TargetType="VerticalStackLayout">
+        <Setter Property="HorizontalOptions" Value="Center"></Setter>
+        <Setter Property="VerticalOptions" Value="FillAndExpand"></Setter>
+        <Setter Property="BackgroundColor" Value="LightSkyBlue" />
+    </Style>
 
 
     <Style TargetType="ActivityIndicator">
