@@ -3,7 +3,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EvaluationMauiDiiage.Views.MainPage"
              NavigationPage.HasNavigationBar="False"
-             Title="{Binding Title}">
-    <VerticalStackLayout>
-    </VerticalStackLayout>
+             Title="">
+    <StackLayout>
+
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <CollectionView ItemsSource="{Binding Rdvs}" Grid.Row="0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Style="{StaticResource FrameMainPage }">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0" VerticalOptions="Center">
+                                    <Label Style="{StaticResource LabelMainPage}" Text="{Binding Id}"/>
+                                    <Label Style="{StaticResource LabelMainPage}" Text="{Binding Name}"/>
+                                    <Label Style="{StaticResource LabelMainPage}" Text="{Binding Date}"/>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </Grid>
+        <Button Text="button" Command="{Binding SourceCommand}"></Button>
+    </StackLayout>
 </ContentPage>

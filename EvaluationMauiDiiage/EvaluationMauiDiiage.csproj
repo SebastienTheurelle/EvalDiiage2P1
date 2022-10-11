@@ -69,9 +69,10 @@
 	<ItemGroup>
 	  <Folder Include="ViewModels\" />
 	  <Folder Include="Views\" />
-	  <Folder Include="Services\" />
 	  <Folder Include="Commons\" />
-	  <Folder Include="Models\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="Models\Entities\NotificationEventArgs.cs" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Update="Views\MainPage.xaml">
